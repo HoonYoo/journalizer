@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+
+<section class="intro">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Share Your Stories</h1>
+                <!-- <p>{post}</p> -->
+            <p>Journalizer is a public forum where anyone can post and share their stories with others. All it takes is one simple click below!</p>
+
+        </div>
+    </div>
+</section>
+
+<section class="midpart">
+    <a class="btn btn-info btn-lg" href="/compose" target="_blank">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Add Your Journal
+    </a>
+
+    <h1>May 19th, 2022</h1>
+    <p> <%= startingContent%></p>
+
+  <%  posts.forEach(function(post){ %>
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+    <% }) %>
+</section>
+
+<%- include("partials/footer"); -%>
